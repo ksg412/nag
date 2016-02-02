@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "HTTP://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+		<setting name="useGeneratedKeys" value="true" />
+		<setting name="defaultExecutorType" value="REUSE" />
+		<setting name="mapUnderscoreToCamelCase" value="true"/>
+	</settings>
+
+	<typeAliases>
+		<typeAlias alias="customUserDetails" type="com.easysport.b40.login.CustomUserDetails"/>
+		<typeAlias alias="mainVo" type="com.easysport.b40.main.vo.MainVo" />
+		<typeAlias alias="memberVo" type="com.easysport.b40.member.vo.MemberVo" />
+		<typeAlias alias="userInfoVo" type="com.easysport.b40.userInfo.vo.UserInfoVo" />
+		<typeAlias alias="setupVo" type="com.easysport.b40.setup.vo.SetupVo" />
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="mapper/main/sql-main.xml"/>
+		<mapper resource="mapper/member/sql-member.xml"/>
+		<mapper resource="mapper/userInfo/sql-userInfo.xml"/>
+		<mapper resource="mapper/setup/sql-setup.xml"/>
+	</mappers>
+</configuration>
+
