@@ -1,7 +1,8 @@
 package com.easysport.b40.setup.vo;
 
-import com.easysport.common.vo.BaseVo;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import com.easysport.common.vo.BaseVo;
 
 /**
  * @Author : sgkim

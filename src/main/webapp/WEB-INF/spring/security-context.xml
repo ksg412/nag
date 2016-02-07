@@ -3,39 +3,34 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:security="http://www.springframework.org/schema/security"
     xsi:schemaLocation="http://www.springframework.org/schema/beans 
-    					http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+    					http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
 						http://www.springframework.org/schema/security 
-						http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+						http://www.springframework.org/schema/security/spring-security-4.0.xsd">
 	
 	
     <security:http auto-config="true" >
-    	<!-- 권한설정 -->
-<!--     	<security:intercept-url pattern="/admin/*" access="ROLE_ADMIN" /> -->
-<!--         <security:intercept-url pattern="/user/*" access="ROLE_USER" /> -->
-<!--         <security:intercept-url pattern="/" access="ROLE_ADMIN" /> -->
-<!--         <security:intercept-url pattern="/" access="ROLE_USER" /> -->
-<!--         <security:intercept-url pattern="/guest/*" access="ROLE_GUEST" /> -->
-        
-        <!-- 	login-page : 로그인 페이지  -->
-		<!-- 	default-target-url : 로그인 성공후 이동될 페이지  -->
-		<!-- 	authentication-failure-url : 로그인 실패시 이동될 페이지  -->
-		<!-- 	logout-success-url : 로그아웃 후 이동될 페이지  -->
     	<security:form-login login-page="/guest/main/login.do"
-    	login-processing-url="/guest/main/j_spring_security_check.do"
-    	default-target-url="/user/main/mainPage.do" 
-    	authentication-failure-url="/guest/main/loginFail.do" />		
-    	<security:logout 
-    	logout-success-url="/guest/main/logout.do"
-    	logout-url="/user/main/j_spring_security_logout.do"/>
-    	
-    	 <!-- 로그아웃시에 remember 제거는 invalidate-session="true" delete-cookies="JSESSIONID,SPRING_SECURITY_REMEMBER_ME_COOKIE" 를 logout에 추가--> 
-    	
-    	<!-- remember-me -->
-<!--     	<security:remember-me key="uniqueAndSecret"/> -->
+							 username-parameter="id"
+							 password-parameter="pw"
+							 login-processing-url="/guest/main/j_spring_security_check.do"
+							 default-target-url="/user/main/mainPage.do"
+							 authentication-failure-url="/guest/main/loginFail.do"
+							 always-use-default-target='true'
+		/>
+    	<security:logout logout-success-url="/guest/main/logout.do"
+						 logout-url="       /user/main/j_spring_security_logout.do"/>
+
+		<security:csrf disabled="true"/>
+
+		<security:session-management>
+			<security:concurrency-control max-sessions="1" expired-url="/login_duplicate"/>
+		</security:session-management>
     </security:http>
-    
+
+	<bean class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler"/>
+
     <!-- Authentication Manager는 인증을 시도(authenticate 메소드 호출)해서 성공하면, Authentication 객체를 반환하고, 실패하면, AuthenticationException 예외를 던지는 메소드를 가지고 있습니다. -->
-    <security:authentication-manager >    	    	
+    <security:authentication-manager>
     	<security:authentication-provider user-service-ref="memberService" />    	    	
     </security:authentication-manager>
     

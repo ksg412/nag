@@ -45,9 +45,9 @@
 				<c:if test="${openType ne 'E'}">Please sign in</c:if>
 			</h2>
 			<label for="inputEmail" class="sr-only">Email address</label>
-			<input type="email" id="inputEmail" name="j_username" class="form-control" placeholder="Email address" required autofocus>
+			<input type="email" id="inputEmail" name="id" class="form-control" placeholder="Email address" required autofocus>
 			<label for="inputPassword" class="sr-only">Password</label>
-			<input type="password" id="inputPassword" name="j_password" class="form-control" placeholder="Password" required>
+			<input type="password" id="inputPassword" name="pw" class="form-control" placeholder="Password" required>
 			<div class="checkbox">
 				<label class="width-full">
 <!-- 					<input type="checkbox" name="_spring_security_remember_me"> Remember me -->

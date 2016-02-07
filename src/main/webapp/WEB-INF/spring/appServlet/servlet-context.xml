@@ -13,6 +13,7 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
     <mvc:annotation-driven validator="validator"/>
     <!--validator만 따로 빼주어 messageSource와 연결해줌.-->
+
     <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <beans:property name="validationMessageSource">
             <beans:ref bean="messageSource"/>
