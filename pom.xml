@@ -167,7 +167,7 @@
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.6.4</version>
+			<version>1.9.3</version>
 		</dependency>
 			<dependency>
 			<groupId>net.sf.json-lib</groupId>
@@ -178,7 +178,12 @@
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-core-asl</artifactId>
-			<version>1.6.4</version>
+			<version>1.9.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.3</version>
 		</dependency>
 		
 		<!-- spring security -->
