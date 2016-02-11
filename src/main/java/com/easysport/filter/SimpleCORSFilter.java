@@ -6,7 +6,7 @@ package com.easysport.filter;
  * @Version : 1.0
  */
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletResponse;
@@ -15,38 +15,21 @@ import java.io.IOException;
 /**
  * Request filter to allow Cross-Origin Resource Sharing.
  */
+@Component
 public class SimpleCORSFilter implements Filter {
 
-    // Configurable origin for CORS - default: * (all)
-    @Value("${http.filter.cors.origin:*}")
-    private String origin;
+    public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
+        HttpServletResponse response = (HttpServletResponse) res;
 
-    /**
-     * @see javax.servlet.Filter#doFilter(javax.servlet.ServletRequest, javax.servlet.ServletResponse,
-     *      javax.servlet.FilterChain)
-     */
-    @Override
-    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
-            ServletException {
-        HttpServletResponse res = (HttpServletResponse) response;
-        res.setHeader("Access-Control-Allow-Origin", origin);
-        chain.doFilter(request, res);
+        response.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        response.setHeader("Access-Control-Allow-Headers", "x-requested-with");
+
+        response.setHeader("Access-Control-Allow-Origin", "*");
+
+
+        chain.doFilter(req, res);
     }
-
-    /**
-     * @see javax.servlet.Filter#destroy()
-     */
-    @Override
-    public void destroy() {
-        // nop
-    }
-
-    /**
-     * @see javax.servlet.Filter#init(javax.servlet.FilterConfig)
-     */
-    @Override
-    public void init(FilterConfig filterConfig) throws ServletException {
-        // nop
-    }
-
+    public void init(FilterConfig filterConfig) {}
+    public void destroy() {}
 }
