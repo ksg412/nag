@@ -60,17 +60,15 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-		
 	<servlet-mapping>
 		<servlet-name>appServlet</servlet-name>
-		<url-pattern>/*</url-pattern>
+		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-<!-- 시작페이지 설정 -->
+
+	<!-- 시작페이지 설정 -->
 	<welcome-file-list>
 <!-- 	    <welcome-file>index.html</welcome-file> -->
 <!-- 	    <welcome-file>index.htm</welcome-file> -->
 	    <welcome-file>home.jsp</welcome-file>
 	</welcome-file-list>
-
 </web-app>

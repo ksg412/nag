@@ -11,12 +11,15 @@
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
+
     <mvc:annotation-driven validator="validator"/>
     <!--validator만 따로 빼주어 messageSource와 연결해줌.-->
 
+    <mvc:default-servlet-handler/>
+
     <beans:bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
         <beans:property name="validationMessageSource">
-            <beans:ref bean="messageSource"/>
+            <beans:ref bean="messageSource"/>a
         </beans:property>
     </beans:bean>
 
@@ -52,7 +55,9 @@
         <beans:property name="fallbackToSystemLocale" value="false"/>
         <beans:property name="cacheSeconds" value="60"/>
     </beans:bean>
+
     <beans:bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
         <beans:property name="defaultLocale" value="ko" />
     </beans:bean>
+
 </beans:beans>
