@@ -6,9 +6,14 @@
         <nav class="navbar navbar-default" role="navigation">
             <ul class="nav nav-justified">
                 <li><a href="<c:url value='/'/>">Home</a></li>
-                <li><a href="#">adress</a></li>
+                <li>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">android<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="<c:url value='/admin/messagePush/messagePushView.do'/>">message push</a></li>
+                    </ul>
+                </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">d3 <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">d3<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="<c:url value='/test/d3/testView01.do'/>">testView01</a></li>
                         <li><a href="<c:url value='/test/d3/testView02.do'/>">testView02</a></li>
@@ -20,9 +25,9 @@
                         <li><a href="#">One more separated link</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Downloads</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">EMPTY</a></li>
+                <li><a href="#">EMPTY</a></li>
+                <li><a href="#">EMPTY</a></li>
             </ul>
         </nav>
     </div>
