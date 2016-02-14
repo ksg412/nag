@@ -45,11 +45,8 @@ public class MessagePushController {
         List<String> gcmRegIdList = this.tempGcmRegIdList();
         Map<String,Object> resultMap = springPushMessage.pushNotificationToGCM(gcmRegIdList, messagePushVo.getMsg());
         model.addAttribute("resultMap",resultMap);
-        return "/messagePush/messagePush";
+        return "redirect:/admin/messagePush/messagePushView.do";
     }
-
-
-
 
     public List<String> tempGcmRegIdList(){
         List<String> gcmRegIdList = new ArrayList<String>();

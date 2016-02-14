@@ -22,6 +22,7 @@
 		<mapper resource="mapper/member/sql-member.xml"/>
 		<mapper resource="mapper/userInfo/sql-userInfo.xml"/>
 		<mapper resource="mapper/setup/sql-setup.xml"/>
+		<mapper resource="mapper/angularjs/sql-angularjs.xml"/>
 	</mappers>
 </configuration>
 
