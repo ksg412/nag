@@ -48,10 +48,8 @@ public class MessagePushController {
         return "redirect:/admin/messagePush/messagePushView.do";
     }
 
-    public List<String> tempGcmRegIdList(){
-        List<String> gcmRegIdList = new ArrayList<String>();
-        gcmRegIdList.add("APA91bE2wpG3jRvvFWqTbpMjTANTL4-z7Vw2uzD6cn2Qet8DMVecjemWH9ObvNI551GH72nvrt_WtiwEl81t7KChkElCXVUa79z_WWftrYPMVI-te3lrCpmGe3YaFbs1qL8h4RidtRlL-kabWzjoJsxV2SNLB1JXEQ");
-//        gcmRegIdList.add("APA91bE5JXK24-n867cv8XqAlZPfIrzF8U5hsFj-Qkw1pUMeSdbrmfu52mLRsCJHZ5wJ7x582zWnrTU6af_mEHN35ETW0uYIAD_xpfPhHP7UyT9OJdrrwWeIVQ0GcuOUw1h4rNWJaCsD");
+    public List<String> tempGcmRegIdList() throws Exception{
+        List<String> gcmRegIdList = messagePushService.getRegIdListPushY();
         return gcmRegIdList;
     }
 }

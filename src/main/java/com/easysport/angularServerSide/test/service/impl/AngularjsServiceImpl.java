@@ -15,7 +15,12 @@ public class AngularjsServiceImpl implements AngularjsService{
     AngularjsDao angularjsDao;
 
     public void insertRegId(String regId) throws Exception{
-        angularjsDao.insertRegId(regId);
+        if(angularjsDao.selectOverlabCheck(regId) == 0){
+          angularjsDao.insertRegId(regId);
+        }else{
+          angularjsDao.updateRegIdRegist(regId);
+        }
+
     }
 
     public void updateRegIdCancel(String regId) throws Exception{

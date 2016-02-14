@@ -17,4 +17,12 @@ public class AngularjsDaoImpl extends SqlSessionDaoSupport implements AngularjsD
     public void updateRegIdCancel(String regId) throws Exception{
         getSqlSession().update("angularjs.updateRegIdCancel",regId);
     }
+
+    public int selectOverlabCheck(String regId) throws Exception{
+        return getSqlSession().selectOne("angularjs.selectOverlabCheck",regId);
+    }
+
+    public void updateRegIdRegist(String regId) throws Exception {
+         getSqlSession().update("angularjs.updateRegIdRegist",regId);
+    }
 }

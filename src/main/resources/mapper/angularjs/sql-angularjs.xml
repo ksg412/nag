@@ -24,4 +24,16 @@
             REG_ID = #{regId}
     </update>
 
+    <select id="angularjs.selectOverlabCheck" resultType="int">
+        SELECT COUNT(*) FROM PUSH WHERE REG_ID = #{regId}
+    </select>
+
+    <update id="angularjs.updateRegIdRegist">
+        UPDATE PUSH
+        SET
+            PUSH_YN = 'Y'
+        WHERE
+            REG_ID = #{regId}
+    </update>
+
 </mapper>

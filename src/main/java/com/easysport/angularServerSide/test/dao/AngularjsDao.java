@@ -7,4 +7,6 @@ public interface AngularjsDao {
 
     public void insertRegId(String regId) throws Exception;
     public void updateRegIdCancel(String regId) throws Exception;
+    public int selectOverlabCheck(String regId) throws Exception;
+    public void updateRegIdRegist(String regId) throws Exception;
 }
